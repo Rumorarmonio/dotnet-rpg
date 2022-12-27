@@ -54,13 +54,6 @@ namespace dotnet_rpg.Services.CharacterService
             {
                 Character character = characters.FirstOrDefault(c => c.Id == updatedCharacter.Id);
                 _mapper.Map(updatedCharacter, character);
-                // character.Name = updatedCharacter.Name;
-                // character.HitPoints = updatedCharacter.HitPoints;
-                // character.Strength = updatedCharacter.Strength;
-                // character.Defense = updatedCharacter.Defense;
-                // character.Intelligence = updatedCharacter.Intelligence;
-                // character.Class = updatedCharacter.Class;
-
                 response.Data = _mapper.Map<GetCharacterDto>(character);
             }
             catch (Exception ex)
